@@ -1,0 +1,104 @@
+  
+  <!-- add the following code in the head tag -->
+<head prefix='og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#'>
+  
+    <!-- Share Image -->
+	<link href='YOUR_LOGO_IMAGE' rel='image_src'/>
+	
+	<!-- Open Graph Meta Tags -->
+	<b:if cond='data:blog.pageType != &quot;index&quot;'>
+	<meta expr:content='data:blog.title' property='og:site_name'/>
+	<meta expr:content='data:blog.pageName' property='og:title'/>
+	<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+	<meta content='article' property='og:type'/>
+	<b:else/>
+	<meta expr:content='data:blog.title' property='og:title'/>
+	<meta content='blog' property='og:type'/>
+	</b:if>
+	<b:if cond='data:blog.metaDescription'>
+	<meta expr:content='data:blog.metaDescription' property='og:description'/>
+<!--	<b:else/>
+	<meta expr:content='data:post.snippet' property='og:description'/> data:post.snippet only work after body tag -->
+	</b:if>
+	<b:if cond='data:blog.postImageThumbnailUrl'>
+	<meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+	<b:else/>
+	<meta content='YOUR_LOGO_IMAGE' property='og:image'/>
+	</b:if>
+    <!-- /Open Graph Meta Tags -->
+
+    <!-- Facebook Meta Tags -->
+	<meta content='YOUR_FACEBOOK_ID' property='fb:admins'/> <!-- find your facebook if from graph.facebook.com/your_username -->
+	<meta content='YOUR_APP_ID' property='fb:app_id'/>
+	<meta expr:content='&quot;en_US&quot;' property='og:locale'/> <!-- en_US refers to US English language -->
+	<meta expr:content='&quot;en_GB&quot;' property='og:locale:alternate'/> <!-- en_GB refers to UK English language -->
+	<meta expr:content='&quot;ne_NP&quot;' property='og:locale:alternate'/> <!-- ne_NP refers to Nepali language -->
+
+	<!-- Google Authorship and Publisher Markup -->
+	<link href='https://plus.google.com/+YOUR_GOOLE+_CUSTOM_NAME/posts' rel='author'/>
+	<link href='https://plus.google.com/+YOUR_GOOLE+_CUSTOM_NAME' rel='publisher'/>
+	
+	
+</head>
+<body>
+  
+  <!-- Google+ Schema.org Markup Tags must be after itemtype='http://schema.org/Blog' -->
+  <div class='blog-wrapper' itemscope='itemscope' itemtype='http://schema.org/Blog'>
+
+	<!-- Schema.org Markup Tags for Google+ -->
+	<b:if cond='data:blog.pageType != &quot;index&quot;'>
+	<meta expr:content='data:blog.pageName' itemprop='name'/>
+	<meta expr:content='data:blog.canonicalUrl' itemprop='url'/>
+	<b:else/>
+	<meta expr:content='data:blog.title' itemprop='name'/>
+	<meta expr:content='data:blog.homepageUrl' itemprop='url'/>
+	</b:if>
+	<meta expr:content='data:blog.metaDescription' itemprop='description'/>
+	<b:if cond='data:blog.postImageThumbnailUrl'>
+	<meta expr:content='data:blog.postImageThumbnailUrl' itemprop='image'/>
+	<b:else/>
+	<meta content='YOUR_LOGO_IMAGE' itemprop='image'/>
+	</b:if>
+  <!-- /Schema.org Markup Tags for Google+ -->
+  
+  
+  <!-- Twitter cards tags must be place after <b:includable id='post' var='post'> -->
+          <b:includable id='post' var='post'>
+
+	<!-- Twitter Card Tags -->
+	<meta content='@TWITTER_USER' name='twitter:site'/>
+	<meta content='@TWITTER_USER' name='twitter:creator'/>
+	<b:if cond='data:post.firstImageUrl'>
+	   <meta content='summary_large_image' name='twitter:card'/> <!-- summary_large_image or any other your card types -->
+	   <meta expr:content='data:post.firstImageUrl' name='twitter:image'/> 
+	<b:else/>
+	   <meta content='summary' name='twitter:card'/>
+	   <b:if cond='data:blog.postImageThumbnailUrl'>
+	      <meta expr:content='data:blog.postImageThumbnailUrl' name='twitter:image'/> 
+	   </b:if>
+	</b:if>
+
+<b:if cond='data:blog.pageName'>
+	<meta expr:content='data:blog.pageName' name='twitter:title'/>
+<b:else/>
+<meta expr:content='data:blog.title' name='twitter:title'/>
+          </b:if>
+
+	<b:if cond='data:blog.metaDescription'>
+	   <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+	<b:else/>
+	   <meta expr:content='data:post.snippet' name='twitter:description'/>     
+	</b:if>
+	<meta expr:content='data:post.sharePostUrl' name='twitter:url'/>
+          <!-- /Twitter Card Tags -->
+
+	<!-- Pinterest Rich Pins Tags -->
+	<meta expr:content='data:post.timestampISO8601' property='article:published_time'/>
+	<meta content='Technology' property='article:section'/>
+	<b:loop values='data:post.labels' var='label'>
+	 <meta expr:content='data:label.name' property='article:tag'/>
+	</b:loop>
+          <!-- /Pinterest Rich Pins Tags -->
+
+
+</body>
