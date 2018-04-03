@@ -1,7 +1,6 @@
-﻿<script>
+
 document.getElementById("loader").onload = function() {myFunction()};
-    </script>
- <script>
+   
         $(function () {
             var $window = $(window),
                 $body = $('body'),
@@ -21,8 +20,7 @@ document.getElementById("loader").onload = function() {myFunction()};
                 $window.off('scroll');
             });
         });
-    </script>
-  <script>
+   
         $(function () {
             var $window = $(window),
                 $body = $('body'),
@@ -49,8 +47,7 @@ document.getElementById("loader").onload = function() {myFunction()};
 1)).toUTCString());
             });
         });
-    </script>
-<script>
+
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
@@ -67,8 +64,7 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
-</script>
-<script>
+
   (function() {
     var cx = '006291456337040211058:ll59iobtcl4';
     var gcse = document.createElement('script');
@@ -78,8 +74,7 @@ function topFunction() {
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
   })();
-</script>
-<script>
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
@@ -87,13 +82,11 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
-</script>
-<script>
+
 function goBack() {
     window.history.back();
 }
-</script>
-<script>
+
 var myVar;
 
 function myFunction() {
@@ -104,4 +97,3 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("wrapnav").style.display = "block";
 }
-</script>
