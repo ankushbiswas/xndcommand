@@ -13,7 +13,7 @@
         Added the attribute "integrity" to be sure that the original script
         is not modified by an extension or other.
     -->
-    <script src="https://cdn.jsdelivr.net/npm/fuckadblock@3.2.1/fuckadblock.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.js" ></script>
     
 
 
@@ -136,9 +136,23 @@ body {font-family: Arial, Helvetica, sans-serif;}
 var modal = document.getElementById("myModal");
     </script>
 
-<script> 		var adBlockDetected = function() { 			$('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
-            modal.style.display = "block";		} 		var adBlockUndetected = function() { 			$('h1 span').text('no AdsBlocker, Thanks for your Support');
-            modal.style.display = "none"; 		} 		if(typeof FuckAdBlock === 'undefined') { 			$(document).ready(adBlockDetected); 		} else { 			var myFuckAdBlock = new FuckAdBlock; 			myFuckAdBlock.on(true, adBlockDetected).on(false, adBlockUndetected); 			$(document).ready(function() { 				myFuckAdBlock.check(['http'], { 					http: { 						baitMode: 'import', 						baitUrl: 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 					}, 				}); 			}); 		} 	</script>
+<script> 		var adBlockDetected = function() { 		
+$('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
+            modal.style.display = "block";		} 	
+            var adBlockUndetected = function() { 
+            $('h1 span').text('no AdsBlocker, Thanks for your Support');
+            modal.style.display = "none"; 		} 		
+            if(typeof FuckAdBlock === 'undefined') { 
+            $(document).ready(adBlockDetected); 
+            } else { 	
+            var myFuckAdBlock = new FuckAdBlock; 
+            myFuckAdBlock.on(true, adBlockDetected).on(false, adBlockUndetected); 	
+            $(document).ready(function() { 	
+            myFuckAdBlock.check(['https'], { 
+            https: { 
+            baitMode: 'import', 
+            baitUrl: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 					}, 				}); 			}); 
+            } 	</script>
 
 </body>
 </html>
