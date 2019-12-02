@@ -148,10 +148,10 @@ $('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
             var myFuckAdBlock = new FuckAdBlock; 
             myFuckAdBlock.on(true, adBlockDetected).on(false, adBlockUndetected); 	
             $(document).ready(function() { 	
-            myFuckAdBlock.check(['https'], { 
-            https: { 
+            myFuckAdBlock.check(['http'], { 
+            http: { 
             baitMode: 'import', 
-            baitUrl: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 					}, 				}); 			}); 
+            baitUrl: 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 					}, 				}); 			}); 
             } 	</script>
 
 </body>
