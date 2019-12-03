@@ -146,9 +146,9 @@ $('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
             $('h1 span').text('no AdsBlocker, Thanks for your Support');
             modal.style.display = "block"; 		
             notifyspan.style.display = "block";
-            
-
-} 		
+            window.onclick = function() { 
+                   modal.style.display = "none";};
+            } 		
             if(typeof FuckAdBlock === 'undefined') { 
             $(document).ready(adBlockDetected); 
             } else { 	
@@ -163,18 +163,10 @@ $('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
      </script>
      
      <script>    
-
 notifyspan.onclick = function() {
     modal.style.display = "none";
   }
-window.onclick = function() {
-if(typeof FuckAdBlock = 'adBlockUndetected') { 
-    modal.style.display = "none";
-  }
-}
-
-
-      </script>
+   </script>
 
 </body>
 </html>
