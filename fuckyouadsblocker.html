@@ -55,15 +55,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 /* The Close Button */
-.close {
+#nclose {
   color: white;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  display:none;
 }
 
-.close:hover,
-.close:focus {
+#nclose:hover,
+#nclose:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -158,17 +159,20 @@ $('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
      
      <script>    
      var notifyspan = document.getElementById("nclose");
-window.onclick = function(event) {
-  if (event.target == adBlockUndetected) {
+
+if(typeof FuckAdBlock === 'undefined') { 
+    notifyspan.style.display = "block";
+  }
+notifyspan.onclick = function() {
+    modal.style.display = "none";
+  }
+window.onclick = function(event4) {
+if(typeof FuckAdBlock === 'undefined') { 
     modal.style.display = "none";
   }
 }
-notifyspan.onclick = function(event) {
-  if (event.target == adBlockUndetected) {
-    modal.style.display = "none";
-  }
-}
-            
+
+
       </script>
 
 </body>
