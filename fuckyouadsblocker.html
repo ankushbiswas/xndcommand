@@ -136,6 +136,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 <script>
 var modal = document.getElementById("myModal");
+     var notifyspan = document.getElementById("nclose");
 </script>
 <script>
 var adBlockDetected = function() { 		
@@ -143,7 +144,11 @@ $('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
             modal.style.display = "block";		} 	
             var adBlockUndetected = function() { 
             $('h1 span').text('no AdsBlocker, Thanks for your Support');
-            modal.style.display = "block"; 		} 		
+            modal.style.display = "block"; 		
+            notifyspan.style.display = "block";
+            
+
+} 		
             if(typeof FuckAdBlock === 'undefined') { 
             $(document).ready(adBlockDetected); 
             } else { 	
@@ -158,16 +163,12 @@ $('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
      </script>
      
      <script>    
-     var notifyspan = document.getElementById("nclose");
 
-if(typeof FuckAdBlock == 'undefined') { 
-    notifyspan.style.display = "block";
-  }
 notifyspan.onclick = function() {
     modal.style.display = "none";
   }
 window.onclick = function() {
-if(typeof FuckAdBlock == 'undefined') { 
+if(typeof FuckAdBlock === 'adBlockDetected') { 
     modal.style.display = "none";
   }
 }
