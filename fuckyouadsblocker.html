@@ -117,7 +117,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
-      <h2>Rules & Notifications : </h2>
+    <span id="nclose">&times;</span>
+      <h2>Rules & Notifications : </h2>
     </div>
     <div class="modal-body">
       <h1 id="adblocknotice">AdsBlocker Status  : <span style="color:green;">loading...</span></h1>
@@ -134,14 +135,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 <script>
 var modal = document.getElementById("myModal");
-    </script>
-
-<script> 		var adBlockDetected = function() { 		
+</script>
+<script>
+var adBlockDetected = function() { 		
 $('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
             modal.style.display = "block";		} 	
             var adBlockUndetected = function() { 
             $('h1 span').text('no AdsBlocker, Thanks for your Support');
-            modal.style.display = "none"; 		} 		
+            modal.style.display = "block"; 		} 		
             if(typeof FuckAdBlock === 'undefined') { 
             $(document).ready(adBlockDetected); 
             } else { 	
@@ -152,7 +153,23 @@ $('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
             http: { 
             baitMode: 'import', 
             baitUrl: 'http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', 					}, 				}); 			}); 
-            } 	</script>
+            } 	
+     </script>
+     
+     <script>    
+     var notifyspan = document.getElementById("nclose");
+window.onclick = function(event) {
+  if (event.target == adBlockUndetected) {
+    modal.style.display = "none";
+  }
+}
+notifyspan.onclick = function(event) {
+  if (event.target == adBlockUndetected) {
+    modal.style.display = "none";
+  }
+}
+            
+      </script>
 
 </body>
 </html>
