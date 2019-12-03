@@ -58,7 +58,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 #nclose {
   color: white;
   float: right;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
   display:none;
 }
@@ -160,14 +160,14 @@ $('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
      <script>    
      var notifyspan = document.getElementById("nclose");
 
-if(typeof FuckAdBlock === 'undefined') { 
+if(typeof FuckAdBlock == 'undefined') { 
     notifyspan.style.display = "block";
   }
 notifyspan.onclick = function() {
     modal.style.display = "none";
   }
 window.onclick = function() {
-if(typeof FuckAdBlock === 'undefined') { 
+if(typeof FuckAdBlock == 'undefined') { 
     modal.style.display = "none";
   }
 }
