@@ -151,8 +151,8 @@ var adBlockDetected = function() {
 $('h1 span').text('Yes / Enabled, Turn off Your AdsBlocker');
             modal.style.display = "block";		} 	
             var adBlockUndetected = function() { 
-            $('h1 span').text('no AdsBlocker, Thanks for your Support');
-            modal.style.display = "block"; 		
+            modal.style.display = "none"; 
+            $('h1 span').text('no AdsBlocker, Thanks for your Support');		
             notifyspan.style.display = "block";
             window.onclick = function() { 
                    modal.style.display = "none";};
